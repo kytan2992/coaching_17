@@ -43,11 +43,11 @@ module "ecs" {
   }
 
   services = {
-    "${local.name_prefix}-flask-ecs-taskdef" = { #task definition and service name -> #Change
+    ky-tf-flask-ecs-taskdef = { #task definition and service name -> #Change
       cpu    = 512
       memory = 1024
       container_definitions = {
-        "flask-app" = { #container name -> Change
+        flask-app = { #container name -> Change
           essential = true
           image     = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${data.aws_region.current.name}.amazonaws.com/${local.name_prefix}-ecr:latest"
           port_mappings = [
