@@ -100,9 +100,6 @@ jobs:
   deploy-ecs:
     runs-on: ubuntu-latest
     needs: deploy-Terraform
-    defaults:
-      run:
-        working-directory: cd ${{ github.workspace }}
 
     steps:
       - name: Checkout
